@@ -6,13 +6,8 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.LinkedList;
 
-public class CalculatorTest {
-    @Test
-    public void shouldCalculateSum(){
-        String dataset1 = "2.2,3.3,4.5,4.4,3.2";
-        Calculator c = new Calculator();
-        System.out.println(c.calculate(dataset1));
-    }
+public class BubbleSortTest {
+
     @Test
     public void shouldOrdenateNumbers(){
         BubbleSort b = new BubbleSort();

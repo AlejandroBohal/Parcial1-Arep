@@ -6,11 +6,31 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Esta calculadora tiene 3 funcionalidades principales que son
+ * ordenar numeros
+ * sumar numeros
+ * calcular el promedio
+ */
 public class Calculator {
+    /**
+     * The Bubble sort.
+     */
     BubbleSort bubbleSort = new BubbleSort();
+
+    /**
+     * Instantiates a new Calculator.
+     */
     public  Calculator(){
 
     }
+
+    /**
+     * Calcula la suma dada una linked list de double
+     *
+     * @param data numeros double en una linked list
+     * @return La media
+     */
     public double calculateMean(LinkedList<Double> data){
         double answer = 0.0;
         for(double node: data){
@@ -19,6 +39,13 @@ public class Calculator {
         answer = answer/data.size();
         return answer;
     }
+
+    /**
+     * Calcula la sumatoria de una conjunto de datos
+     *
+     * @param data datos en una linked list deben ser double
+     * @return sumatoria de los datos
+     */
     public double calculateSum(LinkedList<Double> data){
         double answer = 0.0;
         for(double node: data){
@@ -26,6 +53,13 @@ public class Calculator {
         }
         return answer;
     }
+
+    /**
+     * calcula  la sumatoria, la media y ordena los numeros del data set
+     *
+     * @param data Datos en string
+     * @return String que será parseado a json
+     */
     public String calculate(String data){
         LinkedList<Double> dataDouble = convertToLinkedList(data);
         bubbleSort.bubbleSort(dataDouble);

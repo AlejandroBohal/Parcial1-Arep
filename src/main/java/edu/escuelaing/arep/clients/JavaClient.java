@@ -5,7 +5,17 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 
+/**
+ * Cliente java que tiene la url de heroku quemada
+ */
 public class JavaClient {
+    /**
+     * Realiza un Post a la pagina de heroku
+     * dado el string de numeros dentro de este mismo metodo
+     *
+     * @param args the input arguments
+     * @throws IOException the io exception
+     */
     public static void main(String[] args) throws IOException {
         URL url = new URL("https://parcial-alejandrobohorquez.herokuapp.com/calculate");
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
