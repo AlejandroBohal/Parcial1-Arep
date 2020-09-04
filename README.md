@@ -1,112 +1,109 @@
-# SPARK FRAMEWORK IMPLEMENTATION  :rocket:
-In this repository you will find a solution to the laboratory 3 of Enterprise Architectures
+# Parcial 1 Arep  :rocket:
+
+En este repositorio se encontrará una solución al Parcial 1 de arep, se implementó
+una "calculadora" en heroku con un cliente java para pruebas, esta calculadora
+tiene las siguientes funcionalidades:
+  
+ - Ordenar un conjunto de numeros con el algoritmo bubble sort.
+ - Calcular el promedio de un conjunto de numeros
+ - Calcular la sumatoria de un conjunto de numeros
 
 ## Getting Started
 
-In this repository you will find a solution to the laboratory 3 of Enterprise Architectures, in which it was asked to perform an implementation of a web server that allows reading all types of files both static and dynamic and perform database connection. The application has been deployed to heroku and has continuous integration with circleci.
+Aplicación
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://cryptic-cliffs-94626.herokuapp.com/)[![CircleCI](https://circleci.com/gh/AlejandroBohal/Spark-Implementation-AREP.svg?style=svg)](https://circleci.com/gh/AlejandroBohal/Spark-Implementation-AREP)
+![](https://media.discordapp.net/attachments/352624122301513730/751500769210925096/unknown.png?width=532&height=475)
 
-Application:
+Bubble Sort
 
-https://spark-implementation-alejandro.herokuapp.com/
+![](https://media.discordapp.net/attachments/352624122301513730/751501821792747601/unknown.png?width=815&height=475)
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+La aplicación esta desplegada en heroku en el siguiente link
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://parcial-alejandrobohorquez.herokuapp.com/)
 
-### Prerequisites
+Las siguientes instrucciones le darán una guia de como desargar
+y correr el repositorio localmente
+
+### Pre requisitos
 
 - Java SE Development Kit 8
 - Java SE Runtime Environment 8
-- In order to use the program you will need Maven on your system to be able to build it.
-- Git to be able to clone this repository. 
-- Heroku cli if you want to deploy the app by yourself or use the local server.
+- Maven para compilar el proyecto
+- Heroku cli si desea correr un servidor localmente.
+- Git para clonar el repositorio
+
 
 
 ### Installing
 
-we will first clone the repository with the following command
+Clonaremos el repositorio con el siguiente comando
 
 ```
-Git clone https://github.com/AlejandroBohal/Spark-Implementation-AREP
-cd Spark-Implementation-AREP
+git clone https://github.com/AlejandroBohal/Parcial1-Arep
+cd /Parcial1-Arep
 ```
 
-After this we will build the project with the next command or phase:
+Compilaremos el proyecto con el siguiente comando
 ```
 mvn package
 ```
-Once the project is built, we can execute it with Maven in the following way:
+Para correr el cliente Java ejecutaremos el siguiente comando:
+```
+mvn exec:java -Dexec.mainClass="edu.escuelaing.arep.clients.JavaClient"
+```
+
+Para correr el servidor ejecutaremos el siguiente comando:
 ```
 mvn exec:java -Dexec.mainClass="edu.escuelaing.arep.sparkframework.SparkAServer"
 ```
-if you want to open a local test server you must document the following line in the /src/main/resources/js/script.js directory 
 
-![](https://media.discordapp.net/attachments/352624122301513730/751393603255009290/unknown.png?width=1026&height=418)
+Para correr un servidor local deberá modificar la siguiente parte 
+del código en el archivo que se encuentra en el directorio
+/src/main/resources/js/action.js descomentar linea 5 y comentar linea 6
 
-then execute the following command your terminal (Remember you need the heroku toolbet installed in your computer).
 
+![](https://media.discordapp.net/attachments/352624122301513730/751503820751634542/unknown.png?width=1026&height=403)
 ```
-mvn clean install
-heroku local web
+ heroku local web
 ```
 
-Test cases are automated with JUnit and can be executed with the following command:
+Puede acceder al servidor desde:
+
+http://localhost:36000
+
+
+## Corriendo las prueabs
+
+Las pruebas se automatizaron con Junit y se corren con 
+el siguiente comando:
+
 ```
 mvn test
 ```
-once you run the tests you'll get an output similar to this:
-
-## ClassDiagram
-
-In the following image we can see the structure of the project from the point of view of the class diagram, the most important class is the http server, which is responsible for finding both static and dynamic resources, can handle several non-concurrent requests. From the http server were made the get and post methods to read any type of file and insert it into a MongoDB test database.
-
-![](https://media.discordapp.net/attachments/352624122301513730/751387956081721344/Package_arep.png?width=403&height=475)
 
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
+* Build to Heroku
+    [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://parcial-alejandrobohorquez.herokuapp.com/)
 
-* CircleCI for CI [![CircleCI](https://circleci.com/gh/AlejandroBohal/Spark-Implementation-AREP.svg?style=svg)](https://circleci.com/gh/AlejandroBohal/Spark-Implementation-AREP)
 
+## Documentación
 
-* [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://cryptic-cliffs-94626.herokuapp.com/)
+Website de la documentacion
+https://alejandrobohal.github.io/Parcial1-Arep/
 
-## Documentation
+Generar javadoc con:
 
-This repository contains a paper with documentation about the process carried out for the creation of the program, the following link will redirect you to it:
-
-https://github.com/AlejandroBohal/Spark-Implementation-AREP/blob/master/Documentation.pdf
-
-Documentation website:
-https://alejandrobohal.github.io/Spark-Implementation-AREP/
-
-If you need additional information about the program structure or about some functionality, you can generate the documentation with the following command
 ```
 mvn javadoc:javadoc
 ```
-In order to see the documentation we will generate a simple site that will allow us to see it properly with the following command:
-```
-mvn site
-```
-run the website with:
-```
-mvn site:run
-```
-in a web browser we enter the following address http://localhost:8080 
-documentation will be in the reporting area of the site
-
-![](https://media.discordapp.net/attachments/352624122301513730/751395373695893604/unknown.png)
-
-## Versioning
-
-We use Git for versioning
 
 ## Author
 
 * **Sergio Alejandro Bohorquez Alzate** 
-Student at the Colombian School of Engineering
+Estudiante eci
 
-## License
+## Licensia
 
 This project is licensed under the GNU v3.0 - see the [LICENSE.md](LICENSE.md) file for details
-
