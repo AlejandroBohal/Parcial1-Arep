@@ -2,6 +2,7 @@ let btn = document.getElementById('buttonB');
 
 btn.addEventListener('click',() =>{
     let numbers = document.getElementById('numbers').value;
+    //url = 'http://localhost:36000/calculate';
     url = 'https://parcial-alejandrobohorquez.herokuapp.com/calculate';
     axios.post(url, numbers)
         .then(res => {
